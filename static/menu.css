@@ -1,0 +1,44 @@
+.get-started {
+    display: block;
+    position:center;
+    width: 25%; 
+    height: auto;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.background {
+    width:100%;
+    display: block;
+    left:0px;
+    top:0px;
+    z-index: -1;
+    position: absolute;
+    
+}
+
+.button-container {
+    padding-top: 26%;
+    margin: auto;
+    text-align: center;
+    display: block;
+    width: 100%;
+}
+.navbar {
+    background-color: #dceffc;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.navbar a {
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    text-decoration: burlywood;
+    margin: 0 10px;
+}
+
+.navbar a:hover {
+    color: lightgray;
+}

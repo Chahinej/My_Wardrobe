@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    {% block page_head %}
+    <title>Today's Outfit</title>
+        <link rel="icon" type="image/png" sizes="16x16" href="/static/image/ICON.ico">
+        <link href="{{ url_for('static', filename = 'menu.css')}}" rel="stylesheet">
+    <script src="{{ url_for('static', filename = 'javs.js')}}"></script>
+    <link href="{{ url_for('static', filename = 'style.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    {% endblock %}
+
+    {% block page_body %}
+    <div class='navbar'>
+      <a>My Wardrobe</a>
+      <a href='/api/Auth/logout'>Logout</a>
+    </div>
+    <div class="form-center">
+        <form action="/api/mywardrobe/my_outfit" autocomplete="on" method="POST">
+            <div class="form-group left">
+                <label for="city" class="center-text">City</label>
+                <input type="text" class="form-control" id="city" name="city" value="{{ city }}" placeholder="Enter city">
+            </div>
+            <div class="form-group right">
+                <label for="units" class="center-text">Temperature Units</label>
+                <select class="form-control" id="units">
+                    <option value="metric">Celsius</option>
+                </select>
+            </div>
+            <button type="submit" class="form-control">Get Outfit</button>
+        </form>
+    </div>
+    
+            <div class="row">
+                <div class="col-md-12 text-center ">
+                    <h1>The temperature for {{ city }} is : {{ temperature }}°C</h1>
+                </div>
+                <div id =chaa class="col-md-12 text-center">
+                    <h1>Here is your outfit idea for the weather : </h1>
+                </div>
+            </div>
+            
+            <div class="container-fluid h-100">
+                <div class="row h-100">
+                  <div class="col-6 h-100">
+                    <form>
+                      <div class="form-group h-100">
+                        <label for="top-clothes">Top Clothes</label>
+                        <div class="h-100 overflow-auto">
+                          <ul class="list-group">
+                            {% for top in top_clothes %}
+                              <li class="list-group-item">{{ top }}</li>
+                            {% endfor %}
+                          </ul>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="col-6 h-100">
+                    <form>
+                      <div class="form-group h-100">
+                        <label for="bottom-clothes">Bottom Clothes</label>
+                        <div class="h-100 overflow-auto">
+                          <ul class="list-group">
+                            {% for bottom in bottom_clothes %}
+                              <li class="list-group-item">{{ bottom }}</li>
+                            {% endfor %}
+                          </ul>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+   
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+{% endblock %}
+</html>
