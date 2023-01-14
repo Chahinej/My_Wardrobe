@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
-    {% block page_head %}
+<head>
     <title>Today's Outfit</title>
         <link rel="icon" type="image/png" sizes="16x16" href="/static/image/ICON.ico">
         <link href="{{ url_for('static', filename = 'menu.css')}}" rel="stylesheet">
     <script src="{{ url_for('static', filename = 'javs.js')}}"></script>
     <link href="{{ url_for('static', filename = 'style.css')}}" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    {% endblock %}
+</head>
 
-    {% block page_body %}
+    <body class="body">
     <div class='navbar'>
       <a>My Wardrobe</a>
       <a href='/api/Auth/logout'>Logout</a>
@@ -74,5 +74,5 @@
    
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
-{% endblock %}
+            </body>
 </html>
